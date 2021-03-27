@@ -1,0 +1,102 @@
+.container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #eee;
+    padding-bottom: 80px;
+}
+.slider-container {
+    position: absolute;
+    width: 100%;
+    left: 0; /* 안적어주면 자동 슬라이드 될 때 제일 처음에 한 번 트랜지션 적용 안됨 */
+}
+.slide {
+    position: absolute;
+    width: 100%;
+    padding: 0 10%;
+    box-sizing: border-box;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    overflow: hidden;
+}
+.slider-container.animated {
+    -webkit-transition: left .3s ease-in;
+    transition: left .3s ease-in;
+}
+
+blockquote {
+    color: #636363;
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    line-height: 2;
+}
+cite {
+    font-size: 15px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Utility */
+
+.simple-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Pager */
+
+.pager {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+}
+.pager span {
+    width: 10px;
+    height: 10px;
+    background: rgba(137, 43, 226, 0.3);
+    border-radius: 50%;
+    display: inline-block;
+    text-indent: -9999px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.pager span.active {
+    background: rgb(137, 43, 226);
+}
+
+/* Nav */
+
+#prev,
+#next {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+}
+#prev:hover,
+#next:hover {
+    background-color: rgba(137, 43, 226, 0.2);
+}
+#prev.disabled, #next.disabled {
+    display: none;
+}
+#prev {
+    margin-left: -480px;
+}
+#next {
+    margin-left: 430px;
+}
